@@ -2,6 +2,6 @@
 
 使用 Webpack@2.6.1 搭建的 React 环境
 
-### 基本组件创建
+### 技术栈
 
-首先创建 三大组件
+React + React-Router + Redux + webpack + ES6/7  + flex
