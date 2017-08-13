@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './redux/store'
-
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Home from './components/Home/Home'
 import User from './components/User/User'
 import Order from './components/Order/Order'
@@ -22,18 +22,20 @@ class App extends React.Component {
     return(
       <Provider store={store}>
         <BrowserRouter>
-          <div className="app">
-            <div className="header">
-              <TitleHeader />
+          <MuiThemeProvider>
+            <div className="app">
+              <div className="header">
+                <TitleHeader />
+              </div>
+                <Route exact path='/' component={Home}></Route>
+                <Route path='/order' component={Order}></Route>
+                <Route path='/user' component={User}></Route>
+                <Route path='/cart' component={Cart}></Route>
+                <Route path='/login' component={Login}></Route>
+                <Route path='/Signup' component={Signup}></Route>
+                <Footer />
             </div>
-              <Route exact path='/' component={Home}></Route>
-              <Route path='/order' component={Order}></Route>
-              <Route path='/user' component={User}></Route>
-              <Route path='/cart' component={Cart}></Route>
-              <Route path='/login' component={Login}></Route>
-              <Route path='/Signup' component={Signup}></Route>
-              <Footer />
-          </div>
+          </MuiThemeProvider>
         </BrowserRouter>
       </Provider>
     )
